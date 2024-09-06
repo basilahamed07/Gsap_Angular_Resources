@@ -1,3 +1,4 @@
+
 import { isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
@@ -21,13 +22,17 @@ import { InfinityComponent } from '../cards/infinity/infinity.component';
 
 import { CorasalComponent } from '../corosal/corasal/corasal.component';
 
+// import { TestComponent } from './scrooll/test/test.component';
 
-import { TimelineComponent } from '../time/timeline/timeline.component';
+
+import Swiper from 'swiper';
+
+// import { TimelineComponent } from '../time/timeline/timeline.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,GsapComponent,MountainComponet,SlidesComponent, ExampleComponent,ContentComponent, WordsComponent,
-     ParalelComponent, InfinityComponent, CorasalComponent, TimelineComponent],
+     ParalelComponent, InfinityComponent, CorasalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -38,6 +43,8 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+
+    // --------- here old code -------
     gsap.registerPlugin(ScrollTrigger);
     if (isPlatformBrowser(this.platformId)) {  
       gsap.to(".gsaplogo", {
@@ -65,6 +72,43 @@ export class AppComponent implements AfterViewInit {
         }
       });
     }
-  }
+    // ------------here old code ----------
+    
+    const elements = document.querySelectorAll<HTMLDivElement>(".card_wrapper");
+
+  
+
+    // here about page resources
+
+// elements.forEach((elem: HTMLDivElement, index: number) => {
+  
+//   let content = ['Forex', 'Metal', 'Index CFDs', 'Stock CFDs']
+//     if (isPlatformBrowser(this.platformId)) {  
+//       let swiper: Swiper;
+//       // let index: number;
+//       gsap.to(`.card_wrapper_${index+1} img`, {
+//         x: `-${15 * (5-(index))}vw`,
+//         y: `-${15 * (5-(index))}vh`,
+//         scrollTrigger: {
+//             scrub: true,
+//             start: "top top",
+//             end: "+=20000px", 
+//             trigger: `.card_wrapper_${index+1}`,
+//             onToggle : () => {
+//                 swiper.slideTo(index)
+//                 console.log(123)
+//             },
+//         }
+//     })
+
+
+//   }
+// });
+    
  
-}
+
+
+
+
+
+}}

@@ -27,6 +27,7 @@
     "locomotive-scroll": "^4.1.4",
     "lodash.throttle": "^4.1.1",
     "rxjs": "~7.8.0",
+    "swiper": "^11.1.12",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
